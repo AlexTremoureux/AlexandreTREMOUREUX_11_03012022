@@ -1,0 +1,26 @@
+.container_CardList {
+  width: 90%;
+  margin: auto;
+  border-radius: 25px;
+  background-color: #f7f7f7;
+}
+.cardList {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cardList > li {
+  width: 350px;
+  height: 350px;
+  background-position: center;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  margin: 40px;
+  border-radius: 10px;
+}
+.cardList > li > a {
+  color: white;
+  padding: 10px;
+}

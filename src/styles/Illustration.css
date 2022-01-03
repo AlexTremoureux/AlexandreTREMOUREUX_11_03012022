@@ -1,0 +1,12 @@
+.illustration {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  margin: 0% 5% 0% 5%;
+  background-size: cover;
+}
+.illustration > h1 {
+  color: rgb(255, 255, 255);
+}
