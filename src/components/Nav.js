@@ -6,10 +6,10 @@ class Nav extends React.Component {
       <div>
         <ul className="kasa_Nav">
           <li>
-            <a href="#">Accueil</a>
+            <p>Accueil</p>
           </li>
           <li>
-            <a href="#">A Propos</a>
+            <p>A Propos</p>
           </li>
         </ul>
       </div>

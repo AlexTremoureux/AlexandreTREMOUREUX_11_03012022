@@ -1,12 +1,18 @@
+.illustration > h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
+}
 .illustration {
-  height: 200px;
+  width: 90%;
+  height: 223px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 25px;
   margin: 0% 5% 0% 5%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)),
+    url("../assets/IMG.jpg");
   background-size: cover;
-}
-.illustration > h1 {
-  color: rgb(255, 255, 255);
 }

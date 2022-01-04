@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+}
+
+* {
+  font-family : 'Montserrat', sans-serif ;
+}
+
 .App {
   text-align: center;
 }

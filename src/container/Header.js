@@ -1,7 +1,8 @@
 import React from "react";
-import "../styles/Banner.css";
-import Nav from "./Nav";
-import Title from "./Title";
+import Nav from "../components/Nav";
+import Title from "../components/Title";
+import "../styles/Header.css";
+
 
 class Header extends React.Component {
   render() {

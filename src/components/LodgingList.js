@@ -1,22 +1,22 @@
 import React from "react";
 import datas from "../datas/lodgingList";
 import "../styles/LodgingList.css";
+import Card from "./Card";
 
 class LodgingList extends React.Component {
+  state = datas;
+
   render() {
-    return (
+    return this.state ? (
       <div className="container_CardList">
         <ul className="cardList">
-          {datas.map((card) => (
-            <li
-              key={`${card.id}`}
-              style={{ backgroundImage: `url(${card.cover})` }}
-            >
-              <a href="#">{card.title}</a>
-            </li>
+          {this.state.map((card) => (
+            <Card key={card.id} item={card} />
           ))}
         </ul>
       </div>
+    ) : (
+      <div>Loading</div>
     );
   }
 }

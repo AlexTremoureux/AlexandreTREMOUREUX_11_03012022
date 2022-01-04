@@ -1,17 +1,13 @@
 import React from "react";
 import reactDom from "react-dom";
 import "../styles/App.css";
-import Header from "./Header";
-import Illustration from "./illustration";
-import LodgingList from "./LodgingList";
+import Home from "../pages/Home";
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <Header />
-        <Illustration />
-        <LodgingList />
+        <Home />
       </>
     );
   }
