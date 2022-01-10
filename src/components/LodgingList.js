@@ -1,16 +1,13 @@
 import React from "react";
-import datas from "../datas/lodgingList";
 import "../styles/LodgingList.css";
 import Card from "./Card";
 
 class LodgingList extends React.Component {
-  state = datas;
-
   render() {
-    return this.state ? (
+    return this.props.data ? (
       <div className="container_CardList">
         <ul className="cardList">
-          {this.state.map((card) => (
+          {this.props.data.map((card) => (
             <Card key={card.id} item={card} />
           ))}
         </ul>

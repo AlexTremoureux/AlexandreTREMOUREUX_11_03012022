@@ -1,0 +1,68 @@
+.Collapse-Section {
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  width: 1240px;
+  justify-content: space-between;
+}
+
+#Collapse-section_AboutPage {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10px;
+  width: 1023px;
+}
+
+#Collapse-section_AboutPage > .Collapse {
+  width: 100%;
+  margin: 15px 0px;
+}
+
+.Collapse {
+  width: 45%;
+  margin-bottom: 50px;
+}
+
+.Collapse__title-wrapper {
+  display: flex;
+  background-color: #ff6060;
+  color: white;
+  justify-content: space-between;
+  height: 52px;
+  border-radius: 10px;
+}
+
+.Collapse__title-wrapper > h3 {
+  width: 100%;
+  height: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0px;
+  padding: 18px;
+}
+
+.Collapse__title-wrapper > img {
+  width: 15.56px;
+  padding: 18px;
+}
+
+.Collapse-open {
+  transform: rotate(180deg);
+}
+
+.Collapse > p {
+  color: #ff6060;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 15px;
+  line-height: 25px;
+}
+
+.Collapse__equipments__details {
+  color: #ff6060;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 15px;
+  line-height: 25px;
+}

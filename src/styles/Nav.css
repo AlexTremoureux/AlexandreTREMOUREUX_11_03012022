@@ -5,7 +5,10 @@
 li {
     list-style: none;
 }
-.kasa_Nav > li> p {
+.kasa_Nav > li> a {
     color: #FF6060;
     margin-left: 80px;
+}
+.selected {
+    text-decoration: underline;
 }

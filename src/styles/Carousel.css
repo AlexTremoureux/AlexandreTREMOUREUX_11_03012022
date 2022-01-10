@@ -1,0 +1,40 @@
+.Carousel {
+  width: 1240px;
+  margin: auto;
+}
+
+.currentImage_Img {
+  border-radius: 25px;
+  height: 415px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+}
+
+.CarouselIcon {
+  position: absolute;
+  width: 80%;
+  right: 100%;
+  left: 10%;
+  color: white;
+  top: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.CarouselIcon > .previousSlideIcon {
+  width: 10%;
+  height: 80px;
+}
+.CarouselIcon > .nextSlideIcon {
+  width: 10%;
+  height: 80px;
+}
+.counter {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 31%;
+  right: 50%;
+}

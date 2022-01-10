@@ -1,0 +1,28 @@
+.Page404_illustration {
+  width: 597px;
+  height: 263px;
+  color: #ff6060;
+  font-size: 288px;
+  font-weight: 700;
+  text-align: center;
+  margin: auto;
+}
+
+.Page404_message {
+  width: 872px;
+  font-weight: 500;
+  font-size: 36px;
+  margin: 60px auto 90px auto;
+  color: #ff6060;
+  text-align: center;
+}
+
+.Page404_HomeLink {
+  font-weight: 500;
+  font-size: 18px;
+  color: #ff6060;
+  width: 284px;
+  text-align: center;
+  margin-left: 42%;
+  text-decoration: underline;
+}

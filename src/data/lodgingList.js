@@ -1,4 +1,4 @@
-const datas =[
+const data =[
 	{
 		"id": "c67ab8a7",
 		"title": "Appartement cosy",
@@ -618,4 +618,4 @@ const datas =[
 	}
 ]
 
-export default datas
+export default data
