@@ -10,9 +10,11 @@ class Page404 extends React.Component {
         <p className="Page404_message">
           Oups! La page que vous demandez n'existe pas.
         </p>
-        <Link className="Page404_HomeLink" to="/">
-          Retourner sur la page d'accueil
-        </Link>
+        <div className="Page404_Wrapper-HomeLink">
+          <Link className="Page404_HomeLink" to="/">
+            Retourner sur la page d'accueil
+          </Link>
+        </div>
       </>
     );
   }

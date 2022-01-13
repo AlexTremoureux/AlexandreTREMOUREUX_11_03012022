@@ -10,11 +10,7 @@ import Page404 from "../pages/Page404";
 import { BrowserRouter } from "react-router-dom";
 import Lodging from "../pages/Lodging";
 
-
-
-
 //<Route path="/locations/id:"  render={(match) => <Location id={match.params.id} />} />
-
 
 class App extends React.Component {
   render() {
@@ -26,7 +22,7 @@ class App extends React.Component {
             <Route path="/" exact component={Home} />
             <Route path="/lodging/:id" exact component={Lodging}></Route>
             <Route path="/a-propos" exact component={About} />
-            <Route path="*"  component={Page404} />
+            <Route path="*" component={Page404} />
           </Switch>
           <Footer />
         </BrowserRouter>

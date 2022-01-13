@@ -1,8 +1,27 @@
 .header {
-  width: 1240px;
+  max-width: 1240px;
+  width: 90%;
   height: 200px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.kasa-logo {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .kasa-logo {
+    width: 147px;
+  }
+  .header {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    height: 90px;
+  }
 }

@@ -1,5 +1,5 @@
 .Page404_illustration {
-  width: 597px;
+  width: 100%;
   height: 263px;
   color: #ff6060;
   font-size: 288px;
@@ -9,20 +9,58 @@
 }
 
 .Page404_message {
-  width: 872px;
+  width: 100%;
   font-weight: 500;
   font-size: 36px;
   margin: 60px auto 90px auto;
   color: #ff6060;
   text-align: center;
 }
+.Page404_Wrapper-HomeLink {
+  max-width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 60px;
+}
 
 .Page404_HomeLink {
   font-weight: 500;
   font-size: 18px;
   color: #ff6060;
-  width: 284px;
-  text-align: center;
-  margin-left: 42%;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+  .Page404_illustration {
+    font-size: 180px;
+    margin-bottom: 120px;
+  }
+  
+  .Page404_message {
+    font-size: 18px;
+    margin: 50px auto;
+  }
+  
+  .Page404_HomeLink {
+    font-size: 14px;
+    margin: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .Page404_illustration {
+    font-size: 96px;
+    height: auto;
+    color: #ff6060;
+    margin: 160px 0px;
+  }
+  
+  .Page404_message {
+    width: 80%;
+    font-size: 18px;
+  }
+  
+  .Page404_HomeLink {
+    font-size: 14px;
+  }
 }

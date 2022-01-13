@@ -3,6 +3,7 @@ import DescriptionOfLocation from "../components/DescriptionOfLodging";
 import Collapse from "../container/Collapse";
 import data from "../data/lodgingList";
 import Carousel from "../container/Carousel";
+import Page404 from "./Page404";
 
 class Lodging extends React.Component {
   state = {
@@ -14,7 +15,8 @@ class Lodging extends React.Component {
   getLocationId = () => {
     const id = this.props.match.params.id;
     const itemToDisplay = data.find((location) => location.id === id);
-    const locationIsFind = itemToDisplay.id === id;
+    const locationIsFind = itemToDisplay instanceof Object? itemToDisplay.id === id: false;
+    
     locationIsFind
       ? this.setState({
           isLoaded: true,
@@ -22,7 +24,7 @@ class Lodging extends React.Component {
           error: false,
         })
       : this.setState({
-          isLoaded: false,
+          isLoaded: true,
           data: [],
           error: true,
         });
@@ -40,9 +42,9 @@ class Lodging extends React.Component {
         le problème persiste, merci de réactualiser la page...
       </div>
     ) : error ? (
-      <div>
-        Une erreur étrange est apparue... Merci de revenir sur la page d'accueil
-      </div>
+      <>
+        <Page404 />
+      </>
     ) : (
       <>
         <Carousel imgBank={data.pictures} />

@@ -1,14 +1,36 @@
 .kasa_Nav {
-    display: flex;
-    font-size: 24px;
+  width: 100%;
+  display: flex;
+  font-size: 24px;
+  padding: 0;
 }
-li {
-    list-style: none;
+.kasa_Nav_listOfLink {
+  list-style: none;
+  margin-left: 80px;
+  white-space: nowrap;
 }
-.kasa_Nav > li> a {
-    color: #FF6060;
-    margin-left: 80px;
+.kasa_Nav_link {
+  color: #ff6060;
+  cursor: pointer;
 }
-.selected {
-    text-decoration: underline;
+
+@media screen and (max-width: 425px) {
+  .kasa_Nav {
+    font-size: 12px;
+  }
+  .kasa_Nav_listOfLink {
+    margin-left: 30px;
+  }
+  .kasa_Nav_link {
+    text-transform: uppercase;
+  }
 }
+
+@media screen and (max-width: 350px) {
+    .kasa_Nav {
+      font-size: 10px;
+    }
+    .kasa_Nav_listOfLink {
+      margin-left: 20px;
+    }
+  }

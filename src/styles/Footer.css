@@ -1,14 +1,24 @@
 .Footer {
-    background-color: black;
-    height: 209px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin-top: 30px;
+  width: 100%;
+  background-color: black;
+  height: 209px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .LegalNotice {
-    color: white;
-    font-size: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 425px) {
+  .Footer > .kasa_banner {
+    margin: 0;
+  }
+  .LegalNotice {
+    font-size: 12px;
+  }
 }

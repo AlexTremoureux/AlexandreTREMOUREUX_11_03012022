@@ -5,11 +5,10 @@ import GreyStar from "../assets/GreyStar.svg";
 class Ratings extends React.Component {
   render() {
     const { numberOfStars } = this.props;
-    const stars = [];
-
-    for (let i = 1; i <= 5; i++) {
-      i <= numberOfStars ? stars.push("red") : stars.push("grey");
-    }
+    const array = Array(5).fill("grey");
+    const stars = array.map((item, index) => {
+      return index < numberOfStars ? "red" : "grey";
+    });
 
     return (
       <div className="stars">

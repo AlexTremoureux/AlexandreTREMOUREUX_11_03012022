@@ -1,40 +1,82 @@
 .Carousel {
-  width: 1240px;
+  max-width: 1240px;
+  width: 90%;
   margin: auto;
 }
 
 .currentImage_Img {
   border-radius: 25px;
   height: 415px;
+  max-width: 1240px;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  position: relative;
 }
-
+.currentImage_Img_Wrapper {
+  position: relative;
+  max-width: 1240px;
+}
 .CarouselIcon {
   position: absolute;
-  width: 80%;
-  right: 100%;
-  left: 10%;
+  max-width: 1240px;
+  width: 90%;
+  height: 415px;
   color: white;
-  top: 40%;
+  top: 200px;
   display: flex;
   justify-content: space-between;
 }
 .CarouselIcon > .previousSlideIcon {
-  width: 10%;
-  height: 80px;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 20px;
+  cursor: pointer;
 }
 .CarouselIcon > .nextSlideIcon {
-  width: 10%;
-  height: 80px;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 20px;
+  cursor: pointer;
 }
 .counter {
   color: white;
   font-size: 18px;
   font-weight: 500;
   position: absolute;
-  bottom: 31%;
-  right: 50%;
+  top: 560px;
+  right: 48%;
+  left: 48%;
+}
+
+@media screen and (max-width: 768px) {
+  .CarouselIcon {
+    top: 150px;
+  }
+  .counter {
+    top: 510px;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .currentImage_Img {
+    border-radius: 10px;
+    height: 255px;
+  }
+  .CarouselIcon {
+    top: 90px;
+    height: 255px;
+  }
+  .previousSlideIcon > img, .nextSlideIcon > img {
+    width: 20%;
+  }
+  .counter {
+    top: 300px;
+  }
 }

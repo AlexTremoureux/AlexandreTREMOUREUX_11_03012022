@@ -7,21 +7,21 @@ class Nav extends React.Component {
       <div>
         <nav>
           <ul className="kasa_Nav">
-            <li>
-              <NavLink
-                to="/"
-                style={isActive => ({
-                  textDecoration: isActive ? "underline" : "none"
+            <li className="kasa_Nav_listOfLink">
+              <NavLink className="kasa_Nav_link"
+                to="/" exact
+                style={(isActive) => ({
+                  textDecoration: isActive ? "underline" : "none",
                 })}
               >
                 Accueil
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/a-propos"
-                style={isActive => ({
-                  textDecoration: isActive ? "underline" : "none"
+            <li className="kasa_Nav_listOfLink">
+              <NavLink className="kasa_Nav_link"
+                to="/a-propos" exact
+                style={(isActive) => ({
+                  textDecoration: isActive ? "underline" : "none",
                 })}
               >
                 A propos

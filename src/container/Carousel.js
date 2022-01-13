@@ -45,21 +45,21 @@ class Carousel extends React.Component {
         </p>
         {this.props.imgBank.length > 1 ? (
           <div className="CarouselIcon">
-            <img
-              src={previousSlideIcon}
-              alt="icone précédent"
-              className="previousSlideIcon"
-              onClick={() => this.previousSlide()}
-            />
-            <img
-              src={nextSlideIcon}
-              alt="icone suivant"
-              className="nextSlideIcon"
-              onClick={() => this.nextSlide()}
-            />
+            <div className="previousSlideIcon" onClick={() => this.previousSlide()}>
+              <img
+                src={previousSlideIcon}
+                alt="icone précédent"
+              />
+            </div>
+            <div className="nextSlideIcon" onClick={() => this.nextSlide()}>
+              <img
+                src={nextSlideIcon}
+                alt="icone suivant"
+              />
+            </div>
           </div>
         ) : (
-          ""
+          <div></div>
         )}
       </div>
     );
