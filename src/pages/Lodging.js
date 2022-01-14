@@ -1,30 +1,40 @@
 import React, { useEffect, useState } from "react";
 import DescriptionOfLocation from "../components/DescriptionOfLodging";
 import Collapse from "../container/Collapse";
-import datas from "../data/lodgingList";
 import Carousel from "../container/Carousel";
 import Page404 from "./Page404";
 
 const Lodging = (props) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(false);
   const id = props.match.params.id;
-  useEffect((id) => {
-    const getLodging = () => {
-      console.log(id)
-      const itemToDisplay = datas.find((location) => location.id === id);
-      const locationIsFind =
-        itemToDisplay instanceof Object ? itemToDisplay.id === id : false;
-      return locationIsFind ? setData(itemToDisplay) : setError(true);
-    };
-    getLodging(id);
-    console.log(id);
-  }, [id]);
 
   /* itemToDisplay vient récupérer l'objet location.id correspondant à id et prend la valeur true,
    si pas de correspondance il n'est pas un objet et renvoie false */
   
 
+  useEffect(() => {
+    const getData = () => {
+      const url = "..//data/lodgingList.json";
+      return fetch(url)
+        .then((response) => response.json())
+        .then((arr) => {
+          const itemToDisplay = arr.find((location) => location.id === id);
+          const locationIsFind =
+            itemToDisplay instanceof Object ? itemToDisplay.id === id : false;
+          return locationIsFind ? setData(itemToDisplay) : setError(true);
+        })
+    };
+    getData();
+    // Nettoyage du state data lors du démontage du composant afin d'éviter
+    return () => {
+      setData({});
+    };
+  }, [id]);
+
+  if (!data&&!error) {
+    return <div>loading</div>;
+  }
   return error ? (
     <>
       <Page404 />

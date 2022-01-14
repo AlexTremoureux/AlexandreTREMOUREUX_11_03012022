@@ -1,9 +1,24 @@
 import Illustration from "../components/illustration";
 import LodgingList from "../components/LodgingList";
-import data from "../data/lodgingList";
 import imgHomePage from "../assets/IMG.jpg";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const getData = () => {
+      const url = "..//data/lodgingList.json";
+      return fetch(url)
+        .then((response) => response.json())
+        .then((arr) => setData(arr));
+    };
+    getData();
+    // Nettoyage du state data lors du démontage du composant afin d'éviter
+    return () => {
+      setData({});
+    };
+  }, []);
+
   return (
     <>
       <Illustration
