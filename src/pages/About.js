@@ -3,8 +3,8 @@ import Illustration from "../components/illustration";
 import imgAbout from "../assets/imgAbout.jpg";
 import Collapse from "../container/Collapse";
 
-class About extends React.Component {
-  state = {
+const About = () => {
+  const state = {
     Fiabilité:
       "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.",
     Respect:
@@ -14,34 +14,33 @@ class About extends React.Component {
     Sécurité:
       "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En Laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestiques pour nos hôtes.",
   };
-  render() {
-    return (
-      <>
-        <Illustration imgSrc={imgAbout} title="" />
-        <div className="Collapse-section_AboutPage">
-          <Collapse
-            title={"Fiabilité"}
-            id={`Fiabilité`}
-            description={this.state.Fiabilité}
-          />
-          <Collapse
-            title={"Respect"}
-            id={`Respect`}
-            description={this.state.Respect}
-          />
-          <Collapse
-            title={"Service"}
-            id={`Service`}
-            description={this.state.Service}
-          />
-          <Collapse
-            title={"Sécurité"}
-            id={`Sécurité`}
-            description={this.state.Sécurité}
-          />
-        </div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <Illustration imgSrc={imgAbout} title="" />
+      <div className="Collapse-section_AboutPage">
+        <Collapse
+          title={"Fiabilité"}
+          id={`Fiabilité`}
+          description={state.Fiabilité}
+        />
+        <Collapse
+          title={"Respect"}
+          id={`Respect`}
+          description={state.Respect}
+        />
+        <Collapse
+          title={"Service"}
+          id={`Service`}
+          description={state.Service}
+        />
+        <Collapse
+          title={"Sécurité"}
+          id={`Sécurité`}
+          description={state.Sécurité}
+        />
+      </div>
+    </>
+  );
+};
+
 export default About;

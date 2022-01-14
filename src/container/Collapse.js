@@ -1,55 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import CollapseTop from "../assets/CollapseTop.svg";
 import "../styles/Collapse.css";
 
-class Collapse extends React.Component {
-  state = {
-    isCollapsed: false,
-  };
-
-  // Changement du State et ajout de classe css pour inverser l'icone
-  toggleList = () => {
-    this.setState({
-      isCollapsed: !this.state.isCollapsed,
-    });
-  };
+const Collapse = (props) => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   // Création des éléments HTML en fonction de la propriété description ou equipments
-  handlePropTypes = () => {
-    if (this.props.description) {
+  const handlePropTypes = () => {
+    if (props.description) {
       return (
-        <p className="Collapse__description__details">
-          {this.props.description}
-        </p>
+        <p className="Collapse__description__details">{props.description}</p>
       );
     }
     return (
       <ul className="Collapse__equipments__details">
-        {this.props.equipments.map((prop) => (
+        {props.equipments.map((prop) => (
           <li key={prop}>{prop}</li>
         ))}
       </ul>
     );
   };
 
-  render() {
-    // ligne 49, si isCollapsed: true, affichage de this.handlePropTypes()
-    return (
-      <div className={`Collapse`} onClick={this.toggleList}>
-        <div id={this.props.id} className="Collapse__title-wrapper">
-          <h3 id="Collapse__title">{this.props.title}</h3>
-          <img
-            src={CollapseTop}
-            alt=""
-            className={`Collapse__icon Collapse${
-              this.state.isCollapsed ? "-open" : "-close"
-            }`}
-          />
-        </div>
-        {this.state.isCollapsed && this.handlePropTypes()}
+  return (
+    <div className={`Collapse`} onClick={() => setIsCollapsed(!isCollapsed)}>
+      <div id={props.id} className="Collapse__title-wrapper">
+        <h3 id="Collapse__title">{props.title}</h3>
+        <img
+          src={CollapseTop}
+          alt=""
+          className={`Collapse__icon Collapse${
+            isCollapsed ? "-open" : "-close"
+          }`}
+        />
       </div>
-    );
-  }
-}
+      {isCollapsed && handlePropTypes()}
+    </div>
+  );
+};
 
 export default Collapse;
