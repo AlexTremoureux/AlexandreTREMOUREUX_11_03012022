@@ -14,7 +14,7 @@ class Collapse extends React.Component {
     });
   };
 
-  // Création des éléments HTML en fonction de la propriété
+  // Création des éléments HTML en fonction de la propriété description ou equipments
   handlePropTypes = () => {
     if (this.props.description) {
       return (
@@ -33,6 +33,7 @@ class Collapse extends React.Component {
   };
 
   render() {
+    // ligne 49, si isCollapsed: true, affichage de this.handlePropTypes()
     return (
       <div className={`Collapse`} onClick={this.toggleList}>
         <div id={this.props.id} className="Collapse__title-wrapper">

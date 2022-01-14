@@ -12,6 +12,8 @@ class Lodging extends React.Component {
     error: true,
   };
 
+  /* itemToDisplay vient récupérer l'objet location.id correspondant à id et prend la valeur true,
+   si pas de correspondance il n'est pas un objet et renvoie false */
   getLocationId = () => {
     const id = this.props.match.params.id;
     const itemToDisplay = data.find((location) => location.id === id);
@@ -19,12 +21,10 @@ class Lodging extends React.Component {
     
     locationIsFind
       ? this.setState({
-          isLoaded: true,
           data: itemToDisplay,
           error: false,
         })
       : this.setState({
-          isLoaded: true,
           data: [],
           error: true,
         });
@@ -34,14 +34,9 @@ class Lodging extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, data } = this.state;
+    const { error, data } = this.state;
 
-    return !isLoaded ? (
-      <div>
-        Chargement de la page en cours, veuillez patienter quelques instants. Si
-        le problème persiste, merci de réactualiser la page...
-      </div>
-    ) : error ? (
+    return error ? (
       <>
         <Page404 />
       </>

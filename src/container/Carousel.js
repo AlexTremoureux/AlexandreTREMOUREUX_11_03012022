@@ -10,6 +10,7 @@ class Carousel extends React.Component {
 
   previousSlide = () => {
     const { index } = this.state;
+    // Si nous sommes sur la 1ère image (index = 0) retour à la dernière image de la gallerie (lastIndex)
     const lastIndex = this.props.imgBank.length - 1;
     const resetIndex = index === 0;
     const newIndex = resetIndex ? lastIndex : index - 1;
@@ -21,6 +22,7 @@ class Carousel extends React.Component {
 
   nextSlide = () => {
     const { index } = this.state;
+    // Si nous sommes sur la dernière image (index = lastIndex) retour à la 1ère image de la gallerie (index = 0)
     const lastIndex = this.props.imgBank.length - 1;
     const resetIndex = index === lastIndex;
     const newIndex = resetIndex ? 0 : index + 1;
@@ -31,6 +33,7 @@ class Carousel extends React.Component {
   };
 
   render() {
+    // ligne 49 ternaire: si + d'une image présence d'icône précédent et suivant, sinon pas d'icône
     return (
       <div className="Carousel">
         <div className="currentImage_Wrapper">
