@@ -63,7 +63,6 @@
   }
 }
 
-
 @media screen and (max-width: 425px) {
   .currentImage_Img {
     border-radius: 10px;
@@ -73,7 +72,8 @@
     top: 90px;
     height: 255px;
   }
-  .previousSlideIcon > img, .nextSlideIcon > img {
+  .previousSlideIcon > img,
+  .nextSlideIcon > img {
     width: 20%;
   }
   .counter {

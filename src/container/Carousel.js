@@ -10,8 +10,8 @@ const Carousel = (props) => {
   const resetIndexBackward = index === 0;
   // Si nous sommes sur la dernière image (index = lastIndex) retour à la 1ère image de la gallerie (index = 0)
   const resetIndexForward = index === lastIndex;
-  
-  // ligne 47 ternaire: si + d'une image présence d'icône précédent et suivant, sinon pas d'icône
+
+  // ligne 23 ternaire: si + d'une image présence d'icône précédent et suivant, sinon pas d'icône
   return (
     <div className="Carousel">
       <div className="currentImage_Wrapper">

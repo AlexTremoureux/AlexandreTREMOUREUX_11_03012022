@@ -9,7 +9,9 @@ const Nav = () => {
           <li className="kasa_Nav_listOfLink">
             <NavLink
               to="/"
-              className={({ isActive }) => "kasa_Nav_link" + (isActive ? " activated" : "")}
+              className={({ isActive }) =>
+                "kasa_Nav_link" + (isActive ? " activated" : "")
+              }
             >
               Accueil
             </NavLink>
@@ -17,7 +19,9 @@ const Nav = () => {
           <li className="kasa_Nav_listOfLink">
             <NavLink
               to="a-propos"
-              className={({ isActive }) => "kasa_Nav_link" + (isActive ? " activated" : "")}
+              className={({ isActive }) =>
+                "kasa_Nav_link" + (isActive ? " activated" : "")
+              }
             >
               A propos
             </NavLink>

@@ -31,10 +31,10 @@
 }
 
 @media screen and (max-width: 350px) {
-    .kasa_Nav {
-      font-size: 10px;
-    }
-    .kasa_Nav_listOfLink {
-      margin-left: 20px;
-    }
+  .kasa_Nav {
+    font-size: 10px;
   }
+  .kasa_Nav_listOfLink {
+    margin-left: 20px;
+  }
+}

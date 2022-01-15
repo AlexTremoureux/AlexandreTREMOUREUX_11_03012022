@@ -4,6 +4,7 @@ import Collapse from "../container/Collapse";
 import Carousel from "../container/Carousel";
 import Page404 from "./Page404";
 import { useParams } from "react-router-dom";
+import { url } from "../constantes";
 
 const Lodging = (props) => {
   const [data, setData] = useState(null);
@@ -13,11 +14,9 @@ const Lodging = (props) => {
 
   /* itemToDisplay vient récupérer l'objet location.id correspondant à id et prend la valeur true,
    si pas de correspondance il n'est pas un objet et renvoie false */
-  
 
   useEffect(() => {
     const getData = () => {
-      const url = "..//data/lodgingList.json";
       return fetch(url)
         .then((response) => response.json())
         .then((arr) => {
@@ -25,7 +24,7 @@ const Lodging = (props) => {
           const locationIsFind =
             itemToDisplay instanceof Object ? itemToDisplay.id === id : false;
           return locationIsFind ? setData(itemToDisplay) : setError(true);
-        })
+        });
     };
     getData();
     // Nettoyage du state data lors du démontage du composant afin d'éviter
@@ -34,7 +33,7 @@ const Lodging = (props) => {
     };
   }, [id]);
 
-  if (!data&&!error) {
+  if (!data && !error) {
     return <div>loading</div>;
   }
   return error ? (

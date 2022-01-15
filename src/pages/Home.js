@@ -2,12 +2,12 @@ import Illustration from "../components/illustration";
 import LodgingList from "../components/LodgingList";
 import imgHomePage from "../assets/IMG.jpg";
 import { useEffect, useState } from "react";
+import { url } from "../constantes";
 
 const Home = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const getData = () => {
-      const url = "..//data/lodgingList.json";
       return fetch(url)
         .then((response) => response.json())
         .then((arr) => setData(arr));
