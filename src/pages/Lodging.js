@@ -3,11 +3,13 @@ import DescriptionOfLocation from "../components/DescriptionOfLodging";
 import Collapse from "../container/Collapse";
 import Carousel from "../container/Carousel";
 import Page404 from "./Page404";
+import { useParams } from "react-router-dom";
 
 const Lodging = (props) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
-  const id = props.match.params.id;
+  let params = useParams();
+  const id = params.id;
 
   /* itemToDisplay vient récupérer l'objet location.id correspondant à id et prend la valeur true,
    si pas de correspondance il n'est pas un objet et renvoie false */

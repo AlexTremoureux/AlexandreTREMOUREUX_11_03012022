@@ -13,7 +13,7 @@ const Home = () => {
         .then((arr) => setData(arr));
     };
     getData();
-    // Nettoyage du state data lors du démontage du composant afin d'éviter
+    // Nettoyage du state data lors du démontage du composant
     return () => {
       setData({});
     };

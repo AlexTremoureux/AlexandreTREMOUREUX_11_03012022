@@ -8,24 +8,16 @@ const Nav = () => {
         <ul className="kasa_Nav">
           <li className="kasa_Nav_listOfLink">
             <NavLink
-              className="kasa_Nav_link"
               to="/"
-              exact
-              style={(isActive) => ({
-                textDecoration: isActive ? "underline" : "none",
-              })}
+              className={({ isActive }) => "kasa_Nav_link" + (isActive ? " activated" : "")}
             >
               Accueil
             </NavLink>
           </li>
           <li className="kasa_Nav_listOfLink">
             <NavLink
-              className="kasa_Nav_link"
-              to="/a-propos"
-              exact
-              style={(isActive) => ({
-                textDecoration: isActive ? "underline" : "none",
-              })}
+              to="a-propos"
+              className={({ isActive }) => "kasa_Nav_link" + (isActive ? " activated" : "")}
             >
               A propos
             </NavLink>

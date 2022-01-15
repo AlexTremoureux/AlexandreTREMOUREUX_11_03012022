@@ -12,6 +12,10 @@
 .kasa_Nav_link {
   color: #ff6060;
   cursor: pointer;
+  text-decoration: none;
+}
+.activated {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 425px) {
