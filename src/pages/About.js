@@ -1,7 +1,7 @@
 import React from "react";
 import Illustration from "../components/illustration";
 import imgAbout from "../assets/imgAbout.jpg";
-import Collapse from "../container/Collapse";
+import Collapse from "../components/Collapse";
 
 const About = () => {
   const state = {

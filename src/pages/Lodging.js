@@ -1,45 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import DescriptionOfLocation from "../components/DescriptionOfLodging";
-import Collapse from "../container/Collapse";
-import Carousel from "../container/Carousel";
+import Collapse from "../components/Collapse";
+import Carousel from "../components/Carousel";
 import Page404 from "./Page404";
 import { useParams } from "react-router-dom";
 import { url } from "../constantes";
+import { useFetchItemById } from "../query";
 
-const Lodging = (props) => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(false);
+const Lodging = () => {
   let params = useParams();
   const id = params.id;
+  const { data, isLoading, error } = useFetchItemById(url, id);
 
-  /* itemToDisplay vient récupérer l'objet location.id correspondant à id et prend la valeur true,
-   si pas de correspondance il n'est pas un objet et renvoie false */
-
-  useEffect(() => {
-    const getData = () => {
-      return fetch(url)
-        .then((response) => response.json())
-        .then((arr) => {
-          const itemToDisplay = arr.find((location) => location.id === id);
-          const locationIsFind =
-            itemToDisplay instanceof Object ? itemToDisplay.id === id : false;
-          return locationIsFind ? setData(itemToDisplay) : setError(true);
-        });
-    };
-    getData();
-    // Nettoyage du state data lors du démontage du composant afin d'éviter
-    return () => {
-      setData({});
-    };
-  }, [id]);
-
-  if (!data && !error) {
-    return <div>loading</div>;
+  if (error) {
+    return (
+      <>
+        <Page404 />
+      </>
+    );
   }
-  return error ? (
-    <>
-      <Page404 />
-    </>
+  return isLoading ? (
+    <div>Is Loading</div>
   ) : (
     <>
       <Carousel imgBank={data.pictures} />

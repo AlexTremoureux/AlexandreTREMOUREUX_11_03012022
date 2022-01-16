@@ -1,5 +1,5 @@
 import "../styles/LodgingList.css";
-import Card from "./Card";
+import Card from "../components/Card";
 
 const LodgingList = (props) => {
   return props.data ? (

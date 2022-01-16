@@ -1,25 +1,23 @@
 import Illustration from "../components/illustration";
-import LodgingList from "../components/LodgingList";
+import LodgingList from "../container/LodgingList";
 import imgHomePage from "../assets/IMG.jpg";
-import { useEffect, useState } from "react";
 import { url } from "../constantes";
+import { useFetch } from "../query";
+import Page404 from "./Page404";
 
 const Home = () => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    const getData = () => {
-      return fetch(url)
-        .then((response) => response.json())
-        .then((arr) => setData(arr));
-    };
-    getData();
-    // Nettoyage du state data lors du démontage du composant
-    return () => {
-      setData({});
-    };
-  }, []);
+  const { data, isLoading, error } = useFetch(url);
 
-  return (
+  if (error) {
+    return (
+      <>
+        <Page404 />
+      </>
+    );
+  }
+  return isLoading ? (
+    <div>Is Loading</div>
+  ) : (
     <>
       <Illustration
         imgSrc={imgHomePage}
